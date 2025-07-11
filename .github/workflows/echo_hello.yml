@@ -6,6 +6,7 @@ on:
 jobs:
   echo-hello:
     runs-on: ubuntu-latest
+    environment: deploy
     steps:
       # Print Hello World to the console
       - name: Echo Hello World
