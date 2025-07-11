@@ -1,4 +1,4 @@
-name: Echo Hello World
+name: Deployment_Pipeline
 
 on:
   workflow_dispatch:
