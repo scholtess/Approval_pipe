@@ -1,4 +1,4 @@
-name: Deployment_Pipeline
+name: Deployment_Pipeline_Example_App
 
 on:
   workflow_dispatch:
