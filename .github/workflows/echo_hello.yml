@@ -10,9 +10,12 @@ jobs:
     steps:
       # Print Hello World to the console
       - name: Echo Hello World
-        run: echo $SECRET_STUFF
+        run: |
+            echo $SECRET_STUFF
+            echo $SECRET_REPO
         env:
           SECRET_STUFF: ${{ secrets.SUPER_SECRET }}
+          SECRET_REPO: ${{ secrets.SECRET_REPO }}
 
   Test:
     runs-on: ubuntu-latest
