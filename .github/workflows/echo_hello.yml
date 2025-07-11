@@ -4,9 +4,36 @@ on:
   workflow_dispatch:
 
 jobs:
-  echo-hello:
+  Development:
     runs-on: ubuntu-latest
-    environment: deploy
+    environment: DEV
+    steps:
+      # Print Hello World to the console
+      - name: Echo Hello World
+        run: echo "Hello World"
+
+  Test:
+    runs-on: ubuntu-latest
+    needs: Development
+    environment: TST
+    steps:
+      # Print Hello World to the console
+      - name: Echo Hello World
+        run: echo "Hello World"
+
+  Acceptance:
+    runs-on: ubuntu-latest
+    needs: Test
+    environment: ACC
+    steps:
+      # Print Hello World to the console
+      - name: Echo Hello World
+        run: echo "Hello World"
+
+  Production:
+    runs-on: ubuntu-latest
+    needs: Acceptance
+    environment: PRD
     steps:
       # Print Hello World to the console
       - name: Echo Hello World
