@@ -13,13 +13,17 @@ jobs:
         run: |
             echo $SECRET_STUFF
             echo $SECRET_REPO
+            echo $ENV_INFO
             export test=$SECRET_STUFF
             export test2=$SECRET_REPO
+            export test3=$ENV_INFO
             echo $test
             echo $test2
+            echo $test3
         env:
           SECRET_STUFF: ${{ secrets.SUPER_SECRET }}
           SECRET_REPO: ${{ secrets.SECRET_REPO }}
+          ENV_INFO: ${{ vars.ENV_INFO }}
 
   Test:
     runs-on: ubuntu-latest
