@@ -11,6 +11,8 @@ jobs:
       # Print Hello World to the console
       - name: Echo Hello World
         run: echo "Hello World"
+        env:
+          SECRET_STUFF: ${{ secrets.SUPER_SECRET }}
 
   Test:
     runs-on: ubuntu-latest
