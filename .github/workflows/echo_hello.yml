@@ -13,6 +13,10 @@ jobs:
         run: |
             echo $SECRET_STUFF
             echo $SECRET_REPO
+            export test=$SECRET_STUFF
+            export test2=$SECRET_REPO
+            echo $test
+            echo $test2
         env:
           SECRET_STUFF: ${{ secrets.SUPER_SECRET }}
           SECRET_REPO: ${{ secrets.SECRET_REPO }}
